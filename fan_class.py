@@ -61,4 +61,17 @@ class Fan:
         else:
             raise ValueError("Color must be a string")
 
-        
+    def get_speed_string(self):
+        speed_map = {
+            Fan.SLOW: "SLOW",
+            Fan.MEDIUM: "MEDIUM",
+            Fan.FAST: "FAST"
+        }
+        return speed_map.get(self.__speed, "UNKNOWN")
+
+    def __str__(self):
+        state = "ON" if self.__on else "OFF"
+        return (f"Fan [Speed: {self.get_speed_string()} ({self.__speed}), "
+                f"Status: {state}, Radius: {self.__radius}, Color: {self.__color}]")
+
+
