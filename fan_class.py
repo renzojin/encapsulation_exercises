@@ -37,3 +37,18 @@ class Fan:
 
     def set_on(self, on):
         self.__on = on
+
+    def get_radius(self):
+        return self.__radius
+
+    def set_radius(self, radius):
+        """
+        Args:
+            radius (float): Radius value must be positive
+        """
+
+        if radius > 0:
+            self.__radius = radius
+        else:
+            raise ValueError("Radius must be positive")
+        
