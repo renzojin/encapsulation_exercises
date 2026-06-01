@@ -31,4 +31,9 @@ class Fan:
             self.__speed = speed
         else:
             raise ValueError("Speed must be SLOW(1), MEDIUM(2), FAST(3)")
-    
+
+    def is_on(self):
+        return self.__on
+
+    def set_on(self, on):
+        self.__on = on
