@@ -14,7 +14,21 @@ class Fan:
             color (str): Fan color
             on (bool): Fan power state
         """
-        self.speed = speed
-        self.on = on
-        self.radius = radius
-        self.color = color
+        self.__speed = speed
+        self.__on = on
+        self.__radius = radius
+        self.__color = color
+
+    def get_speed(self):
+        return self.__speed
+
+    def set_speed(self, speed):
+        """
+        Args:
+            speed (int): Fan speed
+        """
+        if speed in [Fan.SLOW, Fan.MEDIUM, Fan.FAST]:
+            self.__speed = speed
+        else:
+            raise ValueError("Speed must be SLOW(1), MEDIUM(2), FAST(3)")
+    
