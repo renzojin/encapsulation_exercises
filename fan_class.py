@@ -51,4 +51,14 @@ class Fan:
             self.__radius = radius
         else:
             raise ValueError("Radius must be positive")
+
+    def get_color(self):
+        return self.__color
+
+    def set_color(self, color):
+        if color and isinstance(color, str):
+            self.__color = color
+        else:
+            raise ValueError("Color must be a string")
+
         
