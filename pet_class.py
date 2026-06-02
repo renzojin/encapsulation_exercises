@@ -39,4 +39,21 @@ class Pet:
             self.__animal_type = animal_type.strip()
         else:
             raise ValueError("Animal type cannot be empty")
-    
+
+    # Age getter and setter
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, age):
+        """
+        Args:
+            age (int): Age of the pet in years
+        """
+        try:
+            age = int(age)
+            if age >= 0:
+                self.__age = age
+            else:
+                raise ValueError("Age cannot be negative")
+        except ValueError:
+            raise ValueError("Age cannot be negative")
