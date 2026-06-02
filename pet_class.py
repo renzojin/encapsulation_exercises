@@ -26,4 +26,17 @@ class Pet:
         else:
             raise ValueError("Name cannot be empty")
 
-        
+    # Animal type getter and setter
+    def get_animal_type(self):
+        return self.__animal_type
+
+    def set_animal_type(self, animal_type):
+        """
+        Args:
+            animal_type (str): Animal type of the pet
+        """
+        if animal_type and animal_type.strip():
+            self.__animal_type = animal_type.strip()
+        else:
+            raise ValueError("Animal type cannot be empty")
+    
