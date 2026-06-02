@@ -57,3 +57,11 @@ class Pet:
                 raise ValueError("Age cannot be negative")
         except ValueError:
             raise ValueError("Age cannot be negative")
+
+    # Helper methods
+    def get_info(self):
+        return f"{self.__name} the {self.__animal_type} is {self.__age} years old"
+
+    def __str__(self):
+        return f"Pet(name='{self.__name}', animal_type='{self.__animal_type}', age={self.__age})"
+    
