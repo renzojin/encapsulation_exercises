@@ -11,3 +11,19 @@ class Pet:
         self.__name = name
         self.__animal_type = animal_type
         self.__age = age
+
+    # Name getter and setter
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        """
+        Args:
+            name (str): Name of the pet
+        """
+        if name and name.strip():
+            self.__name = name.strip()
+        else:
+            raise ValueError("Name cannot be empty")
+
+        
