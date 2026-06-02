@@ -64,4 +64,57 @@ class Pet:
 
     def __str__(self):
         return f"Pet(name='{self.__name}', animal_type='{self.__animal_type}', age={self.__age})"
-    
+
+# Test Program
+if __name__ == "__main__":
+    print("\n" + "=" * 50)
+    print("PET REGISTRATION SYSTEM")
+    print("=" * 50)
+
+    # Create Pet object
+    my_pet = Pet()
+
+    # Get user input
+    print("\nPlease enter your pet's information:")
+    print("-" * 40)
+
+    # Get name with validation
+    while True:
+        try:
+            name = input("Enter pet's name: ")
+            my_pet.set_name(name)
+            break
+        except ValueError as e:
+            print(f"Error: {e}. Please try again.")
+
+    # Get animal type with validation
+    while True:
+        try:
+            animal_type = input("Enter pet's type (Dog, Cat, Bird, etc.): ")
+            my_pet.set_animal_type(animal_type)
+            break
+        except ValueError as e:
+            print(f"Error: {e}. Please try again.")
+
+    # Get age with validation
+    while True:
+        try:
+            age = input("Enter pet's age (in years): ")
+            my_pet.set_age(age)
+            break
+        except ValueError as e:
+            print(f"Error: {e}. Please try again.")
+
+    # Display pet information
+    print("\n" + "=" * 50)
+    print("YOUR PET'S INFORMATION")
+    print("=" * 50)
+    print(f" Name: {my_pet.get_name()}")
+    print(f" Animal Type: {my_pet.get_animal_type()}")
+    print(f" Age: {my_pet.get_age()} years")
+    print(f" Summary: {my_pet.get_info()}")
+    print(f" Object: {my_pet}")
+
+    print("\n" + "=" * 50)
+    print(" Pet registration completed successfully!")
+    print("=" * 50)
