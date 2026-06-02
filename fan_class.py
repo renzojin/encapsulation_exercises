@@ -19,6 +19,7 @@ class Fan:
         self.__radius = radius
         self.__color = color
 
+    # Speed getter and setter
     def get_speed(self):
         return self.__speed
 
@@ -32,6 +33,7 @@ class Fan:
         else:
             raise ValueError("Speed must be SLOW(1), MEDIUM(2), FAST(3)")
 
+    # On/Off getter and setter
     def is_on(self):
         return self.__on
 
@@ -52,6 +54,7 @@ class Fan:
         else:
             raise ValueError("Radius must be positive")
 
+    # Color getter and setter
     def get_color(self):
         return self.__color
 
@@ -61,6 +64,7 @@ class Fan:
         else:
             raise ValueError("Color must be a string")
 
+    # Helper method to get speed as string
     def get_speed_string(self):
         speed_map = {
             Fan.SLOW: "SLOW",
@@ -74,11 +78,13 @@ class Fan:
         return (f"Fan [Speed: {self.get_speed_string()} ({self.__speed}), "
                 f"Status: {state}, Radius: {self.__radius}, Color: {self.__color}]")
 
+# Test Program
 if __name__ == "__main__":
     print("\n" + "=" * 30)
     print("FAN CLASS TEST PROGRAM")
     print("=" * 30)
 
+    # Create first fan
     print("\nCreating Fan 1 (Maximum settings)...")
     fan1 = Fan()
     fan1.set_speed(Fan.FAST)      # Speed = 3
@@ -86,6 +92,7 @@ if __name__ == "__main__":
     fan1.set_color("yellow")       # Color = yellow
     fan1.set_on(True)              # Turn ON
 
+    # Create second fan
     print("\nCreating Fan 2 (Medium settings)...")
     fan2 = Fan()
     fan2.set_speed(Fan.MEDIUM)     # Speed = 2
@@ -93,6 +100,7 @@ if __name__ == "__main__":
     fan2.set_color("blue")         # Color = blue
     fan2.set_on(False)             # Turn OFF
 
+    # Display results
     text = "RESULTS"
     print("\n" + "=" * 30)
     print(text.center(20))
