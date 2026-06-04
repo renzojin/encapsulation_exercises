@@ -28,4 +28,20 @@ class Car:
     # Speed getter (no setter - speed only changes via accelerate/brake)
     def get_speed(self):
         return self.__speed
+
+    # Accelerate method
+    def accelerate(self):
+        self.__speed += 5
+        return self.__speed
+
+    # Brake method
+    def brake(self):
+        if self.__speed >= 5:
+            self.__speed -=5
+        else:
+            self.__speed = 0
+        return self.__speed
+
+    def __str__(self):
+        return f"{self.__year_model} {self.__make} - Current Speed: {self.__speed}km/h"
     
